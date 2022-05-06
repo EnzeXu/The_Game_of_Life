@@ -7,13 +7,9 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 from config import Config, Coordinate_Nearest_X, Coordinate_Nearest_Y, PyGameConfig
-from tkinter import filedialog, Tk
 from button import Button
 from input_box import InputBox
 from surface import Surface
-
-# from tkinter import *
-from tkinter.filedialog import askopenfilename
 
 
 def update_grid(config, tmp_map, x, y):
@@ -166,15 +162,6 @@ def load_gol(save_path):
     with open(save_path, "rb") as f:
         tmp_map = pickle.load(f)
     return tmp_map
-
-
-# def choose_load_path():
-#     # root = Tk()
-#     # root.title('Intro')
-#     filetypes = [("GameOfLife File", "*.gol")]
-#     path = filedialog.askopenfilename(initialdir="./saves/", filetypes=filetypes, title="Please select a folder:")
-#     # root.mainloop()
-#     return path
 
 
 def run():
@@ -571,10 +558,7 @@ def run():
                 run()
 
 
-if __name__ == "__main__":
-    # run()
-    # print(filename)
-
+def one_time_draw_gol():
     center = np.asarray([
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0],
@@ -620,4 +604,7 @@ if __name__ == "__main__":
     save_figure(config, init_map, True, True, "./image/gol.png")
     # save_gol(init_map, "saves/boat.gol")
     print_map(config, init_map)
-    pass
+
+
+if __name__ == "__main__":
+    run()
