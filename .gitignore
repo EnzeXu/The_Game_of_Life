@@ -1,0 +1,9 @@
+saves/*
+test*
+option_box.py
+demo.py
+.DS_Store
+.idea/*
+__pycache__/*
+build/*
+dist/*
