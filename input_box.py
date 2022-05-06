@@ -4,8 +4,8 @@ import os
 class InputBox:
     def __init__(self, rect: pygame.Rect = pygame.Rect(100, 100, 140, 32)) -> None:
         self.boxBody: pygame.Rect = rect
-        self.color_inactive = pygame.Color(255, 255, 255)
-        self.color_active = pygame.Color(0, 0, 255)
+        self.color_inactive = pygame.Color(0, 0, 255)
+        self.color_active = pygame.Color(255, 0, 0)
         self.color = self.color_inactive
         self.active = False
         self.text = "10"
